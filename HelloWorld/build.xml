@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="HelloWorld" default="hello" basedir=".">
+ <taskdef resource="cpptasks.tasks"/>
+ <typedef resource="cpptasks.types"/>
+ <target name="init">
+  <condition property="cc" value="msvc">
+   <os family="windows"/>
+  </condition>
+ </target>
+ <target name="hello" depends="init">
+  <cc name="${cc}" outfile="hello">
+   <fileset dir="." includes="hello.c"/>
+  </cc>
+ </target>
+</project>
