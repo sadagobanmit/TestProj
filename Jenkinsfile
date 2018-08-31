@@ -9,8 +9,6 @@ node('localhost') {
             stage ("Clean Workspace") {
                 deleteDir()
             }
-            
-            } 
 
             stage ("Build") {
                 withEnv(
@@ -20,7 +18,7 @@ node('localhost') {
                         "JOB_NAME=10.1 Test Project"
                     ]
                 ) {
-                    dir('work-server/iserver/app/buildInstaller') {
+                    dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\HelloWorld') {
                         build_cmd = "" +
                             """ant resolve setResourceProperties CIBuild """ +
                             """-Dvs.path64.2017="C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\\\" """ 
@@ -38,4 +36,5 @@ node('localhost') {
         }
     }
 }
+
 
