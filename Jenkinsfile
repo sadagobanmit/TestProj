@@ -19,11 +19,7 @@ node('master') {
                     ]
                 ) {
                     dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\HelloWorld') {
-                        build_cmd = "" +
-                            """ant resolve setResourceProperties CIBuild """ +
-                            """-Dvs.path64.2017="C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\\\" """ 
-                        echo "build_cmd=${build_cmd}"
-                        bat build_cmd
+                         sh "cmake ../ && cmake --build ."
                     }
                 }
             }
