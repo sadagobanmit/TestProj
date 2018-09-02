@@ -19,8 +19,8 @@ node('master') {
                 ) {
                     dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\HelloWorld') {
 					
-						mkdir build
-						cd build
+						bat 'mkdir build'
+						bat 'cd build'
 						bat 'cmake .. -G "Visual Studio 12 2013 Win64" -DCMAKE_PREFIX_PATH=C:/Qt/5.9.1/msvc2017_64'
 						bat "\"${tool 'MSBuild'}\" HelloWorld.sln /p:Configuration=Release /p:Platform=\"x64\" /p:ProductVersion=1.0 /m"
                     }
