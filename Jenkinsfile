@@ -21,7 +21,7 @@ node('master') {
 					
 						mkdir build
 						cd build
-						cmake -G"Visual Studio 12 2013 Win64" ..
+						//cmake -G"Visual Studio 12 2013 Win64" ..
 						cmake --build .
                         // sh.exe "cmake ../ && cmake --build ."
                     }
