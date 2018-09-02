@@ -18,7 +18,7 @@ node('master') {
                     ]
                 ) {
                     dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\HelloWorld') {
-                         C:\\Program Files\\Git\\usr\\bin\\sh.exe "cmake ../ && cmake --build ."
+                         sh.exe "cmake ../ && cmake --build ."
                     }
                 }
             }
