@@ -13,7 +13,7 @@ node('master') {
             stage ("Build") {
                 withEnv(
                     [
-                        "PATH=${env.PATH};C:\\Program Files\\Git\\usr\\bin",                        
+                        "PATH=${env.PATH};C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\CMake\\bin",                        
                         "JOB_NAME=10.1 Test Project"
                     ]
                 ) {
