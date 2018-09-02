@@ -13,8 +13,7 @@ node('master') {
             stage ("Build") {
                 withEnv(
                     [
-                        "PATH=${env.PATH};C:\\Program Files\\Git\\usr\\bin",
-                        "ARTIFACT_PATH=C:\\Artifacts",
+                        "PATH=${env.PATH};C:\\Program Files\\Git\\usr\\bin",                        
                         "JOB_NAME=10.1 Test Project"
                     ]
                 ) {
