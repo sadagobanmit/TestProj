@@ -18,7 +18,12 @@ node('master') {
                     ]
                 ) {
                     dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\HelloWorld') {
-                         sh.exe "cmake ../ && cmake --build ."
+					
+						mkdir build
+						cd build
+						cmake -G"Visual Studio 12 2013 Win64" ..
+						cmake --build .
+                        // sh.exe "cmake ../ && cmake --build ."
                     }
                 }
             }
