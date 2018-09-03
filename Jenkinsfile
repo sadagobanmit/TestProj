@@ -13,13 +13,18 @@ node('master') {
             stage ("Build") {
                 withEnv(
                     [
-                        "PATH=${env.PATH};C:\\Program Files\\Git\\usr\\bin",
-                        "ARTIFACT_PATH=C:\\Artifacts",
+                        "PATH=${env.PATH};C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\CMake\\bin",                        
                         "JOB_NAME=10.1 Test Project"
                     ]
                 ) {
                     dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\HelloWorld') {
-                         sh "cmake ../ && cmake --build ."
+					
+						bat 'mkdir build'
+						bat 'cd build'
+						bat 'cmake .. -G "Visual Studio 12 2013 Win64'
+						bat 'cmake --build .'
+						//bat 'cmake .. -G "Visual Studio 12 2013 Win64" -DCMAKE_PREFIX_PATH=C:/Qt/5.9.1/msvc2017_64'
+						//bat "\"${tool 'MSBuild'}\" HelloWorld.sln /p:Configuration=Release /p:Platform=\"x64\" /p:ProductVersion=1.0 /m"
                     }
                 }
             }
