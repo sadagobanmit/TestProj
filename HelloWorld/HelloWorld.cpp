@@ -6,7 +6,7 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	std::cout << "Hello World\n";
+	std::cout << "Hello World1\n";
 	std::cout << "test code change\n";
 	return 0;
 }
