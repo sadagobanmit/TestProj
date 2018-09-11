@@ -9,6 +9,20 @@ node('master') {
             stage ("Clean Workspace") {
                 deleteDir()
             }
+			
+			stage ("Clone MSH source") {
+
+                dir('TestProj') {
+                    git(
+                        branch: 'develop',
+                        changelog: false,
+                        credentialsId: '829049af-793b-48cf-9e35-5978930370db',
+                        poll: false,
+						url: 'https://github.com/sadagobanmit/TestProj.git'                        
+                    )
+                }
+            } 
+			
 
             stage ("Build") {
                 withEnv(
@@ -16,7 +30,7 @@ node('master') {
                         "JOB_NAME=10.1 Test Project"
                     ]
                 ) {
-                    dir('E:\\WSNTSrc\\Releases\\TestProj\\TestProj\\PythonTest\\Test') {
+                    dir('TestProj\\PythonTest\\Test') {
 					
 						bat 'python -m unittest helloworldtest'						
                     }
