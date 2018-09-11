@@ -30,7 +30,7 @@ node('master') {
                         "JOB_NAME=10.1 Test Project"
                     ]
                 ) {
-                    dir('TestProj\\TestProj\\PythonTest\\Test') {
+                    dir('TestProj\\PythonTest\\Test') {
 					
 						bat 'python -m unittest helloworldtest'						
                     }
