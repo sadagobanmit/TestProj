@@ -1,5 +1,5 @@
 ﻿class HelloWorldPy(object):
 
     def add(self, x):
-        print 'abcd'    
+        print 'abcde'    
         return x+x
